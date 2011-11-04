@@ -19,6 +19,7 @@ Change the src to the appropriate location.
 Use a selector to chose the textareas where you want to apply the effect and call the plugin.
 
 Eg.
+
      <script>
      var options = {};
      $('#expandable').expand(options);
