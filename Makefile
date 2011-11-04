@@ -1,7 +1,5 @@
 TEST_DIR = test
 
-VSN = 1.0.0
-
 TOLINT = lib/*.js
 
 .PHONY: all
@@ -12,8 +10,8 @@ build: build.foo
 
 build.foo: 
 	rm build/*.*; \
-	cat license_header.txt                                     > build/jquery.expandableTextarea-$(VSN).js.txt; \
-	python tools/jsmin.py < lib/jquery.expandableTextarea.js  >> build/jquery.expandableTextarea-$(VSN).js.txt;
+	java -jar tools/yuicompressor-2.4.6.jar --nomunge -o build/jquery.sg.expand-min.js lib/jquery.sg.expand.js; \
+	java -jar tools/yuicompressor-2.4.6.jar --nomunge -o build/jquery.sg.expand-min.css lib/jquery.sg.expand.css;
 
 lint: ${TOLINT}
 
